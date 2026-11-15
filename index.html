@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123c32">
+<title>CampusFacile — Réussis tes examens</title>
+<style>
+:root{--green:#123c32;--green2:#1d6b52;--lime:#d9f27b;--ink:#17231f;--muted:#68756f;--bg:#f5f7f4;--white:#fff;--line:#e5ebe6;--orange:#f3a45b}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1100px;margin:auto;min-height:100vh}.top{background:var(--green);color:white;padding:18px 18px 26px;border-radius:0 0 24px 24px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}.logo{width:38px;height:38px;border-radius:12px;background:var(--lime);color:var(--green);display:grid;place-items:center;font-weight:900}.topline{display:flex;justify-content:space-between;align-items:center}.tag{font-size:12px;color:#d7e6df}.hero{margin-top:26px}.hero h1{font-size:27px;line-height:1.12;margin:0 0 8px}.hero p{color:#d3e1db;margin:0;font-size:14px}.content{padding:18px}.welcome{display:flex;justify-content:space-between;align-items:center;margin:2px 0 16px}.welcome h2{font-size:19px;margin:0}.welcome small{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:13px}.stat b{font-size:21px;color:var(--green)}.stat span{display:block;color:var(--muted);font-size:11px;margin-top:3px}.section{margin-top:24px}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.sectionhead h3{margin:0;font-size:17px}.sectionhead small{color:var(--muted)}.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.action{border:1px solid var(--line);background:white;border-radius:15px;padding:15px;text-align:left}.action .ico{font-size:22px}.action b{display:block;margin-top:7px}.action small{color:var(--muted)}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.filters input,.filters select{min-width:0;border:1px solid var(--line);border-radius:11px;background:white;padding:11px;flex:1}.subject{background:white;border:1px solid var(--line);padding:14px;border-radius:14px;margin-bottom:9px;display:flex;justify-content:space-between;gap:10px;align-items:center}.subject b{display:block;font-size:14px}.subject small{color:var(--muted);font-size:12px}.pill{font-size:11px;background:#edf5ef;color:var(--green2);padding:6px 9px;border-radius:20px;white-space:nowrap}.primary{border:0;background:var(--green2);color:white;border-radius:11px;padding:11px 14px;font-weight:700}.secondary{border:1px solid var(--line);background:white;border-radius:11px;padding:10px 13px}.tabs{position:sticky;bottom:0;background:white;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:5}.tab{border:0;background:transparent;color:var(--muted);font-size:11px;padding:5px}.tab span{display:block;font-size:19px;margin-bottom:2px}.tab.active{color:var(--green2);font-weight:800}.page{display:none}.page.active{display:block}.notice{background:#f0f5e7;border:1px solid #dfeacb;border-radius:13px;padding:12px;font-size:12px;color:#40533b}.quizbox{background:white;border:1px solid var(--line);border-radius:16px;padding:16px}.answers{display:grid;gap:8px;margin-top:15px}.answer{border:1px solid var(--line);border-radius:11px;padding:12px;text-align:left;background:white}.answer.chosen{border-color:var(--green2);background:#edf5ef}.answer.correct{border-color:#27834e;background:#eaf7ee}.answer.wrong{border-color:#c55;background:#fff0f0}.muted{color:var(--muted)}.footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}.hidden{display:none!important}@media(min-width:700px){.top{padding:24px 32px 32px}.content{padding:25px 32px}.hero h1{font-size:34px}.actions{grid-template-columns:repeat(4,1fr)}.stats{max-width:560px}.tabs{border-radius:16px;margin:15px 18px;position:static}.app{padding-bottom:20px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="topline"><div class="brand"><div class="logo">CF</div>CampusFacile</div><div class="tag">ÉDITION BÊTA · BURKINA FASO</div></div>
+ <div class="hero"><h1>Prépare tes examens<br>avec confiance.</h1><p>Tes révisions, tes sujets et tes entraînements au même endroit.</p></div>
+</header>
+<main class="content">
+ <section id="home" class="page active">
+  <div class="welcome"><div><h2>Bonjour, étudiant·e 👋</h2><small>Prêt·e à progresser aujourd'hui ?</small></div><span class="pill">Version test</span></div>
+  <div class="stats"><div class="stat"><b id="countSubjects">6</b><span>Sujets disponibles</span></div><div class="stat"><b id="countQuizzes">0</b><span>Quiz terminés</span></div><div class="stat"><b id="bestScore">—</b><span>Meilleur score</span></div></div>
+  <div class="section"><div class="sectionhead"><h3>Que veux-tu faire ?</h3></div><div class="actions">
+   <button class="action" onclick="showPage('library')"><span class="ico">📚</span><b>Consulter les sujets</b><small>Parcourir la bibliothèque</small></button>
+   <button class="action" onclick="showPage('quiz')"><span class="ico">✍️</span><b>Faire un quiz</b><small>Tester tes connaissances</small></button>
+   <button class="action" onclick="showPage('progress')"><span class="ico">📈</span><b>Ma progression</b><small>Suivre tes résultats</small></button>
+   <button class="action" onclick="showPage('library')"><span class="ico">🔎</span><b>Rechercher</b><small>Trouver une matière</small></button>
+  </div></div>
+  <div class="section"><div class="sectionhead"><h3>À découvrir</h3><small>Exemples de démonstration</small></div><div class="notice">Les documents affichés dans cette première maquette sont des exemples fictifs. Nous ajouterons des sujets authentiques et vérifiés avec les autorisations nécessaires.</div></div>
+ </section>
+ <section id="library" class="page">
+  <div class="sectionhead"><h3>Bibliothèque de sujets</h3><small id="resultCount">6 ressources</small></div>
+  <div class="filters"><input id="search" placeholder="Rechercher une matière ou un sujet…" oninput="renderSubjects()"><select id="level" onchange="renderSubjects()"><option value="">Toutes les filières</option><option>Économie</option><option>Droit</option><option>Informatique</option><option>Lettres</option><option>Sciences</option></select></div>
+  <div id="subjects"></div>
+ </section>
+ <section id="quiz" class="page">
+  <div class="sectionhead"><h3>Entraînement rapide</h3><small>QCM de démonstration</small></div>
+  <div class="quizbox"><div class="pill">Question <span id="qnum">1</span>/3</div><h3 id="question" style="font-size:17px;line-height:1.4">Chargement…</h3><div class="answers" id="answers"></div><p id="feedback" class="muted" aria-live="polite"></p><button id="nextBtn" class="primary hidden" onclick="nextQuestion()">Question suivante</button></div>
+ </section>
+ <section id="progress" class="page">
+  <div class="sectionhead"><h3>Ma progression</h3></div>
+  <div class="stat"><b id="progressScore">Aucun résultat</b><span>Ton meilleur score aux quiz</span></div>
+  <div class="section notice">Tes résultats sont enregistrés uniquement dans ce navigateur pour cette maquette. La création de comptes et la synchronisation entre appareils arriveront dans une prochaine étape.</div>
+  <button class="secondary" style="margin-top:12px" onclick="resetProgress()">Réinitialiser mes résultats de test</button>
+ </section>
+</main>
+<div class="tabs">
+ <button class="tab active" data-page="home" onclick="showPage('home')"><span>🏠</span>Accueil</button>
+ <button class="tab" data-page="library" onclick="showPage('library')"><span>📚</span>Sujets</button>
+ <button class="tab" data-page="quiz" onclick="showPage('quiz')"><span>✍️</span>Quiz</button>
+ <button class="tab" data-page="progress" onclick="showPage('progress')"><span>📈</span>Progression</button>
+</div>
+<div class="footer">CampusFacile · Apprendre, s'entraîner, réussir.</div>
+</div>
+<script>
+const subjects=[
+ {title:"Introduction à la microéconomie",field:"Économie",level:"Licence 1",school:"Université — exemple",type:"Fiche de révision"},
+ {title:"Comptabilité générale : exercices",field:"Économie",level:"Licence 1",school:"Université — exemple",type:"Exercices"},
+ {title:"Notions fondamentales de droit",field:"Droit",level:"Licence 1",school:"Université — exemple",type:"Fiche de révision"},
+ {title:"Algorithmique et logique",field:"Informatique",level:"Licence 1",school:"Université — exemple",type:"Entraînement"},
+ {title:"Méthodologie de la dissertation",field:"Lettres",level:"Licence 1",school:"Université — exemple",type:"Méthode"},
+ {title:"Mathématiques générales",field:"Sciences",level:"Licence 1",school:"Université — exemple",type:"Exercices"}
+];
+const questions=[
+ {q:"En économie, que représente le coût d'opportunité ?",a:["Le prix affiché d'un produit","La valeur de la meilleure option à laquelle on renonce","Le total des dépenses d'une entreprise"],c:1,e:"Le coût d'opportunité correspond à la valeur de la meilleure alternative abandonnée."},
+ {q:"Quel est le rôle principal d'un algorithme ?",a:["Décrire une suite d'étapes pour résoudre un problème","Décorer une page web","Stocker uniquement des images"],c:0,e:"Un algorithme est une suite finie et ordonnée d'instructions permettant de résoudre un problème."},
+ {q:"Dans une dissertation, que fait l'introduction ?",a:["Elle donne uniquement la conclusion","Elle présente le sujet et annonce la démarche","Elle remplace le développement"],c:1,e:"L'introduction amène le sujet, pose la problématique et annonce le plan."}
+];
+let qi=0,answered=false,score=0;
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.page===id));if(id==='quiz'&&!document.getElementById('question').dataset.ready){loadQuestion()}window.scrollTo({top:0,behavior:'smooth'})}
+function renderSubjects(){const term=(document.getElementById('search').value||'').toLowerCase();const field=document.getElementById('level').value;const list=subjects.filter(s=>(!field||s.field===field)&&(s.title.toLowerCase().includes(term)||s.field.toLowerCase().includes(term)));document.getElementById('resultCount').textContent=list.length+' ressource(s)';document.getElementById('subjects').innerHTML=list.map(s=>`<div class="subject"><div><b>${s.title}</b><small>${s.field} · ${s.level}<br>${s.school} · ${s.type}</small></div><span class="pill">Exemple</span></div>`).join('')||'<p class="muted">Aucun résultat. Essaie un autre mot-clé.</p>'}
+function loadQuestion(){answered=false;const q=questions[qi];document.getElementById('qnum').textContent=qi+1;document.getElementById('question').textContent=q.q;document.getElementById('question').dataset.ready='yes';document.getElementById('feedback').textContent='';document.getElementById('nextBtn').classList.add('hidden');document.getElementById('answers').innerHTML=q.a.map((a,i)=>`<button class="answer" onclick="chooseAnswer(${i})">${String.fromCharCode(65+i)}. ${a}</button>`).join('')}
+function chooseAnswer(i){if(answered)return;answered=true;const q=questions[qi];document.querySelectorAll('.answer').forEach((b,j)=>{b.disabled=true;if(j===q.c)b.classList.add('correct');else if(j===i)b.classList.add('wrong')});if(i===q.c)score++;document.getElementById('feedback').textContent=(i===q.c?'Bonne réponse ! ':'Pas tout à fait. ')+q.e;document.getElementById('nextBtn').textContent=qi===questions.length-1?'Voir mon résultat':'Question suivante';document.getElementById('nextBtn').classList.remove('hidden')}
+function nextQuestion(){if(qi<questions.length-1){qi++;loadQuestion()}else{let pct=Math.round(score/questions.length*100);let best=Number(localStorage.getItem('cfBest')||0);if(pct>best)localStorage.setItem('cfBest',pct);let n=Number(localStorage.getItem('cfQuizzes')||0)+1;localStorage.setItem('cfQuizzes',n);document.getElementById('question').textContent='Quiz terminé !';document.getElementById('answers').innerHTML=`<h2>${pct}%</h2><p>${score} bonne(s) réponse(s) sur ${questions.length}.</p>`;document.getElementById('feedback').textContent='Bravo pour ton entraînement.';document.getElementById('nextBtn').classList.add('hidden');updateStats();qi=0;score=0}}
+function updateStats(){let n=Number(localStorage.getItem('cfQuizzes')||0),b=Number(localStorage.getItem('cfBest')||0);document.getElementById('countQuizzes').textContent=n;document.getElementById('bestScore').textContent=n?b+'%':'—';document.getElementById('progressScore').textContent=n?b+'%':'Aucun résultat'}
+function resetProgress(){localStorage.removeItem('cfQuizzes');localStorage.removeItem('cfBest');updateStats()}
+renderSubjects();updateStats();
+</script>
+</body>
+</html>
